@@ -1,0 +1,108 @@
+⭐ Day 8 – Part 1: useEffect for API Fetching
+
+Real-world React apps me data mostly API se aata hai, isliye API fetch karna ek must-know skill hai.
+
+React me API fetch always useEffect ke andar hota hai, taaki data render ke baad fetch ho.
+
+----------------------------------------------------------------------
+
+🧠 Day 8 – Part 2: useRef Hook
+
+useRef React ka ek multipurpose hook hai.
+
+useRef do kaam karta hai:
+
+DOM elements ko directly access karna
+
+Aisi value store karna jo re-render nahi karati
+---------------------------------------------------------------------------
+
+🎯 useState vs useRef – Difference (Interview Favorite):---
+| useState                          | useRef                       |
+| --------------------------------- | ---------------------------- |
+| Component ko re-render karata hai | Re-render nahi karata        |
+| UI update karne ke liye           | DOM ya non-UI values ke liye |
+| Slow for high-frequency updates   | Perfect for timers, counters |
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+💬 Top Interview Questions (Day 8 Hooks)
+Q1: Why can’t we use async directly inside useEffect?
+
+Ans: useEffect ko ek cleanup return function chahiye hota hai. Async function always promise return karta hai, cleanup nahi.
+Isliye async function useEffect ke andar define karte hain.
+
+Q2: What is useRef used for?
+
+Ans:
+
+DOM access (focus, scroll, video controls)
+
+Storing values between renders without causing UI re-render
+
+Q3: When does useEffect run?
+
+Ans:
+
+Without dependency → har render
+
+With empty array → only once
+
+With dependency → jab dependency change ho
+
+Q4: Why do we use state for API loading/error?
+
+Ans:
+Kyuki UI ko batana hota hai:
+
+Data load ho raha hai
+
+Error aya
+
+Data successfully aagaya
+
+Q5: useEffect cleanup kab chalta hai?
+
+Ans:
+
+Component unmount hone par
+
+Next effect run hone se pehle
+
+---------------------------------------------------------------------
+🏋️ Practice Task (For You)
+
+Make UsersList.jsx:
+
+Load users from this API:
+https://jsonplaceholder.typicode.com/users
+
+Show name, email
+
+Show:
+
+“Loading…” while fetching
+
+“Error fetching data” on error
+
+------------------------------------------------------------
+
+⭐ Quick Interview Q&A (API Fetch)
+Q1: Why we call API inside useEffect?
+
+Because React wants side effects (like API calls) to run after the initial render, not during UI creation.
+
+Q2: Why we need loading state?
+
+Without loading, UI blank dikhega.
+Loading indicates data aaraha hai.
+
+Q3: Why error handling is important?
+
+Real world API failures common hote hain.
+Crash avoid karne ke liye error UI show karna must hai.
+
+Q4: Why async function is created inside useEffect?
+
+Because useEffect ka callback cleanup return expect karta hai — async fn return promise karta hai which is not allowed.

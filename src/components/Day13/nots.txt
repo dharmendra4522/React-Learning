@@ -1,0 +1,36 @@
+⭐ DAY 13 – React Router DOM
+
+React Router se hum multiple pages banate hain bina page reload ke.
+
+Examples:
+Home
+About
+Contact
+User Profile
+Product Details /product/23
+Auth pages (login/signup)
+React Router ko SPA (Single Page Application) ka backbone mana jata hai.
+
+
+---------------------------------------------------------------------------------------
+
+
+⭐ INTERVIEW QUESTIONS (React Router)
+Q1. What is React Router?
+A library to handle client-side routing in React apps.
+
+Q2. What is the difference between Link and a tag?
+<a> reloads whole page
+<Link> prevents reload (SPA)
+
+Q3. What is useParams?
+Hook to read dynamic URL values.
+
+Q4. What is useNavigate?
+Hook to redirect programmatically.
+
+Q5. What is nested routing?
+Routes inside layout wrapper.
+
+Q6. What is 404 route?
+Default fallback route (*).

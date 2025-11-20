@@ -1,0 +1,16 @@
+.layout-container {
+  font-family: Arial;
+  padding: 20px;
+}
+.navbar {
+  background-color: #222;
+  padding: 15px;
+  color: white;
+}
+
+.footer{
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    background: #eee;
+}

@@ -1,0 +1,56 @@
+🧠 Part 1: What is useEffect?
+React me jab bhi component render hota hai (ya state/props change hoti hai), useEffect help karta hai “render ke baad kuch kaam karne me”.
+Ye kaam side effects kehlate hain.
+Side effect ka matlab:
+Wo kaam jo directly UI banana nahi hai, lekin UI ke sath related hai:
+Console me log print karna
+Data API se fetch karna
+Timer chalana
+Browser title change karna
+Event listener lagana
+
+
+
+DOM update ya cleanup.
+⚙️ Syntax:
+useEffect(() => {
+  // code that runs after render
+}, [dependencies]);
+
+
+Parameters:
+
+Callback Function → ye render ke baad chalega
+
+Dependency Array → batata hai kab chale:
+
+[] → sirf ek baar (component mount hone par)
+
+[variable] → jab variable change ho
+
+No array → har render par chalega
+
+
+💭 Key Points:
+
+useEffect() = perform side effects after rendering.
+
+Dependency array batata hai kab run karna hai.
+
+Cleanup function memory leak se bachata hai.
+
+useEffect ke andar async kaam (like fetch) karna common hai.
+
+
+--------------------------------------------
+
+🏋️ Practice Task:
+
+Ek Clock.jsx component banao:
+
+Har second current time update ho (like a digital clock).
+
+useEffect() me setInterval lagao.
+
+Component unmount hone par clearInterval se cleanup karo.
+

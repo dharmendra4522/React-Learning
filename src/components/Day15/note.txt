@@ -1,0 +1,248 @@
+⭐ DAY 15 – Global Auth System (Login + Logout + Protected Routes)
+
+Hum banayenge:
+
+AuthContext (user store karna)
+
+Login (user set karna)
+
+Logout (user remove karna)
+
+ProtectedRoute (auth required pages protect karna)
+
+Navbar me Login/Logout dynamic
+
+Dashboard protected page
+
+LocalStorage me user save (refresh par login na jaye)
+
+
+---------------------------------------------------------------------------------------
+
+
+⭐ WHY CONTEXT API FOR AUTH?
+
+Agar aap login ko sirf state me rakhenge:
+
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+Problem:
+
+❌ Ye sirf ek component me kaam karta hai
+❌ Navbar, Dashboard, Layout ko access nahi milega
+❌ App reload hote hi login state reset ho jayegi
+❌ Token ya user data share nahi ho paayega
+
+Hence:
+
+👉 We need Global State (Context API).
+AuthContext isliye banate hain taaki:
+
+Pure app me login state share ho
+
+Components ko user info easily mile
+
+ProtectedRoute real authentication check kare
+
+Login/Logout universal ho
+
+---------------------------------------------------------------------------------------
+src/context/AuthContext-
+⭐ EXPLANATION NOTES (write this in your notes)
+✔ createContext()
+
+Global authentication store banata hai
+(jaise ek global box jisme login data rakha jata hai)
+
+✔ user state
+
+Login ke baad user data yaha store hota hai
+Logout ke baad yahi null ho jata hai
+
+✔ useEffect → load data on refresh
+
+Page reload par login state lost na ho, isliye localStorage se wapas load karte hain.
+
+✔ login function
+
+user ko set karta hai
+
+browser me save karta hai
+
+✔ logout function
+
+user ko remove karta hai
+
+localStorage clear
+
+✔ AuthProvider
+
+Pure app ko wrap karta hai (jisse saare components login data access kar sakte hain)
+
+--------------------------------------------------------------------------------------
+
+⭐ STEP 2 — Wrap App with AuthProvider
+
+📁 main.jsx
+
+import { AuthProvider } from "./context/AuthContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </BrowserRouter>
+);
+
+
+✔ Ab pure app me login/logout ka access hoga
+
+
+---------------------------------------------------------------------------------------------------------
+⭐ STEP 3 — Login Page (Real Authentication)
+
+📁 Login.jsx
+
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
+const Login = () => {
+  const { login } = useContext(AuthContext);
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (username.trim() === "") return;
+    login(username);
+    navigate("/dashboard");
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="bg-white p-8 rounded-xl shadow-xl w-96">
+        <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
+
+        <input
+          type="text"
+          placeholder="Enter Username"
+          className="w-full p-3 border rounded mb-4"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <button
+          className="w-full bg-blue-600 text-white py-2 rounded"
+          onClick={handleLogin}
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
+
+---------------------------------------------------------------------------------------------------------
+⭐ STEP 4 — Logout in Navbar
+
+📁 Navbar.jsx
+
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+
+const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+
+  return (
+    <nav className="p-4 bg-black text-white flex gap-6 items-center">
+
+      <Link to="/">Home</Link>
+      <Link to="/services">Services</Link>
+      <Link to="/about">About</Link>
+      <Link to="/dashboard">Dashboard</Link>
+
+      <div className="ml-auto">
+        {user ? (
+          <>
+            <span className="mr-4">Hi, {user.name}</span>
+            <button onClick={logout} className="bg-red-500 px-3 py-1 rounded">
+              Logout
+            </button>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </div>
+
+    </nav>
+  );
+};
+
+export default Navbar;
+---------------------------------------------------------------------------------------------------------
+
+⭐ STEP 5 — ProtectedRoute (Real-checking)
+
+📁 ProtectedRoute.jsx
+
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+
+const ProtectedRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+
+  if (!user) return <Navigate to="/login" />;
+
+  return children;
+};
+
+export default ProtectedRoute;
+
+
+✔ If not logged in → redirect to login
+✔ If logged in → show page
+
+
+---------------------------------------------------------------------------------------------------------
+⭐ FINAL STEP — Dashboard Page
+
+📁 Dashboard.jsx
+
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
+const Dashboard = () => {
+  const { user } = useContext(AuthContext);
+
+  return (
+    <div className="p-6">
+      <h1 className="text-4xl font-bold mb-4">Dashboard</h1>
+      <p className="text-xl">Welcome, {user.name} 👋</p>
+    </div>
+  );
+};
+
+export default Dashboard;
+
+
+✔ Show logged-in username
+✔ Tailwind responsive layout
+---------------------------------------------------------------------------------------------------------
+
+⭐ NOW YOU HAVE A FULL AUTH SYSTEM:
+✔ login
+✔ logout
+✔ global user state
+✔ protected pages
+✔ dynamic navbar
+✔ localStorage
+✔ context api
+✔ real authentication flow
+
+Ye system har real React app me use hota ha

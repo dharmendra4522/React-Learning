@@ -1,0 +1,40 @@
+🧠 Concept: Dynamic Lists in React
+
+Ab tak humne static array render kiya tha.
+Ab hum useState ke through ek dynamic list banayenge — jisme data user ke input ke hisaab se badalta hai.
+
+React me ye pattern “Controlled List + State Update” kehlata hai.
+
+--------------------------------------------------
+
+💭 Interview Questions (Dynamic List / State)
+
+Q1. How do you update arrays in React state?
+A: Always create a new array using spread operator or array methods like filter(), map(), concat(). Never mutate directly.
+
+Q2. Why should we not use push() or splice() on React state arrays?
+A: They modify the original array. React’s state must be treated as immutable for predictable rendering.
+
+Q3. How can we remove an item from a list in React?
+A: Use filter() method:
+
+setTodos(todos.filter((_, i) => i !== index));
+
+Q4. What happens if you call setState (or setTodos) with the same value?
+A: React won’t re-render since the value hasn’t changed — React uses shallow comparison.
+
+Q5. What is controlled input?
+A: When form input’s value is managed by React state (value + onChange).
+
+-----------------------------------------------------------------
+
+
+🏋️ Practice Task (for you)
+
+Make a file AdvancedTodo.jsx:
+
+Add Add and Delete functionality (as above).
+
+Add a “Clear All” button to empty the list.
+
+Show a message “You have {todos.length} tasks left.”

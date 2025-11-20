@@ -1,0 +1,23 @@
+🧠 Part 1: What are Controlled Components?
+
+React me Controlled Components wo hote hain jinka data React State ke control me hota hai.
+Yani input box me likha gaya text directly state se linked hota hai.
+
+Matlab:
+
+Jo user type karega, wo React state me store hoga.
+
+💡 Part 4: Multiple Inputs ek object me handle karna
+
+Aap har field ke liye alag state banane ke bajaye ek object use kar sakte ho.
+
+------------------------------------------------------
+🏋️ Practice Task:
+
+Ek FeedbackForm.jsx banao:
+
+3 fields: name, email, message
+
+Submit hone par console me sab values print karo.
+
+Button ke niche likho: “Thanks for your feedback, {name}!” (jab submit ho jaye)

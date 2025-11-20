@@ -1,0 +1,32 @@
+🧠 Part 1: What is State?
+
+State ek data storage system hai jo component ke andar hoti hai.
+Jab state change hoti hai, component automatically re-render hota hai — yani UI update ho jata hai bina page reload ke.
+
+Simple words me:
+
+“State = Component ka internal memory.”
+
+⚙️ Part 2: useState Hook
+
+React me state banane ke liye useState hook use karte hain.
+Hook = special function jo React features (like state, lifecycle) use karne deta hai.
+
+
+
+🧩 Part 3: Multiple States
+
+Aap ek hi component me multiple states use kar sakte ho:
+
+---------------------------------------
+🏋️ Practice Task:
+
+Ek new component LoginToggle.jsx banao.
+
+Ek button ho “Login” aur “Logout” ke beech toggle kare.
+
+Button click hone par text change ho:
+
+“Welcome Dharm sir” (if logged in)
+
+“Please login to continue” (if logged out)

@@ -1,0 +1,13 @@
+| Day        | Topic                                                 | Status  |
+| ---------- | ----------------------------------------------------- | ------- |
+| Day 1–3    | Basics (JSX, Props, State)                            | ✔ Done  |
+| Day 4–9    | Hooks (useEffect, useRef, useMemo…)                   | ✔ Done  |
+| Day 10–12  | Advanced Hooks + Custom Hooks                         | ✔ Done  |
+| Day 13–14  | Routing + Layout + Protected Routes                   | ✔ Done  |
+| **Day 15** | AuthContext (Login, Logout)                           | Pending |
+| **Day 16** | API Integration (CRUD + Axios)                        | Pending |
+| **Day 17** | Forms + Validation + Reusable Form Hooks              | Pending |
+| **Day 18** | Global State (Context API + Advanced Patterns)        | Pending |
+| **Day 19** | Optimizations (Suspense, lazy-loading, memo patterns) | Pending |
+| **Day 20** | Project: Full React App                               | Pending |
+| **Day 21** | Deployment (Vercel)                                   | Pending |

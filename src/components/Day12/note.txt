@@ -1,0 +1,104 @@
+⭐ DAY 12 – CUSTOM HOOKS
+Custom Hook kya hota hai?
+
+Short answer:
+Aapka khud ka React Hook — jisme aap logic ko reuse kar sakte ho.
+
+Long answer (real-life example):
+
+Aapko kai jagah par ye kaam karna hai:
+
+API se data fetch karna
+
+Loading state handle
+
+Error handle
+
+Data return
+
+Agar aap 4–5 components me API call karoge, to same code baar-baar likhna padta hai.
+
+Custom Hook kehta hai:
+
+“Ek baar logic likho, har jagah use karo.”
+
+
+
+⭐ Kab use karte hain Custom Hooks?
+
+✔ API calls (fetch hook)
+✔ Form handling (useForm hook)
+✔ Local storage management
+✔ Theme handling
+✔ Validation logic
+✔ Timer logic
+✔ Authentication logic
+
+
+⭐ Rule:
+Custom hook ka naam "use" se start hona chahiye
+Example:
+useFetch, useForm, useLocalStorage, useToggle
+
+-----------------------------------------------------------------------------------------------
+
+⭐ PART 1: useFetch – Custom Hook
+(Realtime API fetching with loading + error)
+Ye most used custom hook hota hai.
+
+⭐ Step-by-Step Custom Hook bnana
+📌 Step 1: Create file
+useFetch.js
+📌 Step 2: Hook logic likho
+⭐ Step 3: Is hook ko use karo Component me
+Example: Users.jsx
+
+--------------------------------------------------------------------------------
+⭐ PART 2: Custom Hook – useLocalStorage
+
+(Real-world use in theme, cart, auth)
+Store and retrieve values easily:
+useLocalStorage.js
+
+⭐ PART 3: useToggle Hook (Tiny but useful)
+-----------------------------------------------------
+
+⭐ INTERVIEW QUESTIONS (Custom Hooks)
+Q1. What is a custom hook?
+
+A JavaScript function that uses React hooks inside it and lets you reuse logic.
+
+Q2. Why do we use custom hooks?
+
+To remove duplicate logic and improve code reusability.
+
+Q3. Do custom hooks re-render the component?
+
+Yes, when their internal state changes.
+
+Q4. Why should custom hook name start with “use”?
+
+React ko pata chale ke ye hook hai — warna rules of hooks break honge.
+
+Q5. Can custom hooks return functions?
+Yes, they can return:
+state
+setters
+functions
+objects
+(anything like normal JS functions)
+
+
+----------------------------------------------------------------------------------
+⭐ PRACTICE TASK (For You)
+Task: Build a “Crypto Prices” App using useFetch
+
+Create a hook: useFetch
+
+API:
+https://api.coindesk.com/v1/bpi/currentprice.json
+Show: Bitcoin, USD rate
+Show Loading
+Show Error
+Clean UI
+Aapka task complete hone ke baad mai review kar dunga.

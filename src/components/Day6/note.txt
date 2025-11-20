@@ -1,0 +1,88 @@
+🧠 PART 1: Conditional Rendering (If / Else in React)
+
+Conditional rendering ka matlab hai —
+
+“React me kisi condition ke base par UI ka part show ya hide karna.”
+
+Example: login hone par “Welcome” dikhana, warna “Please login”.
+
+
+
+💭 Common Interview Questions (Conditional Rendering)
+
+Q1. What is conditional rendering in React?
+A: It means rendering different UI based on certain conditions (like login state, user type, etc). It uses JavaScript logic inside JSX.
+
+Q2. Which operators are commonly used for conditional rendering?
+A:
+
+Ternary operator (condition ? true : false)
+
+Logical AND (condition && element)
+
+Q3. Can we use if statements directly in JSX?
+A: Not directly inside JSX return block — but you can use it before return or inside separate functions.
+
+
+🧠 PART 2: Rendering Lists (Dynamic Data with map())
+
+React me jab aapko array data show karna ho (like todo list, products, cards),
+aap map() use karte ho to loop through data aur har item ke liye ek JSX return karte ho.
+
+⚙️ Example 1: Basic List Rendering
+
+
+
+
+
+---------------------------------------
+💭 Common Interview Questions (List Rendering)
+
+Q1. What is the purpose of the key prop in React lists?
+A: key helps React identify which items have changed, been added, or removed — it improves rendering performance.
+
+Q2. What happens if you don’t provide a unique key?
+A: React still renders the list, but it logs a warning and may re-render elements incorrectly (performance issue).
+
+Q3. Can we use index as a key?
+A: Yes, but only if the list is static (not going to change). For dynamic lists, use unique IDs.
+
+
+---------------------------------------------------------------------------------------
+
+🏋️ Practice Task
+
+Create a file TodoList.jsx
+
+Add an array of todo items (like “Learn React”, “Read Docs”, “Practice Hooks”).
+
+Display them in a list using map().
+
+If there are no todos, show “No tasks available” using conditional rendering.
+
+💡 Hint:
+
+{todos.length > 0 ? (
+  todos.map(...)
+) : (
+  <p>No tasks available</p>
+)}
+
+
+🧠 Interview Questions on Lists & Conditional Rendering
+
+Q1. What is the use of key in a React list?
+A: It helps React identify which items changed, added, or removed — improves rendering efficiency.
+
+Q2. What happens if we use index as key?
+A: Works fine for static lists, but can cause re-rendering issues for dynamic lists (items added/removed).
+
+Q3. What are two ways to implement conditional rendering?
+A:
+
+Ternary operator: condition ? <A/> : <B/>
+
+Logical AND: condition && <A/>
+
+Q4. Can we use if/else directly in JSX?
+A: No, but you can use it before the return statement or inside a function.

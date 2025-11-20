@@ -1,0 +1,24 @@
+🧠 Part 1: What are Props?
+
+Props ka matlab hota hai “properties.”
+Ye ek component se dusre component tak data bhejne ke liye use hoti hain.
+Props read-only hoti hain — matlab child component unhe change nahi kar sakta.
+
+🧩 Part 2: Destructuring Props
+
+Aap “props.” baar-baar likhne ke bajaye destructuring use kar sakte ho:
+
+
+🧰 Part 3: Passing Different Types of Props
+
+Props me kuch bhi bhej sakte ho — string, number, array, object, function, etc.
+
+--------------------------------------------------------
+
+🏋️ Practice Task:
+
+Ek new component Card.jsx banao.
+
+Props ke through title, description, aur image bhejo.
+
+JSX me ek styled card bana ke display karo.

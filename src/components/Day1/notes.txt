@@ -1,0 +1,22 @@
+🧠 Part 1: What is React?
+
+React ek JavaScript library hai (Facebook ne banayi) jo UI banane ke kaam aati hai.
+Ye Component-Based architecture follow karti hai — matlab UI ko chhote-chhote reusable parts (components) me tod diya jata hai.
+
+Example:
+Ek website me Navbar, Footer, Sidebar — sab alag components ho sakte hain.
+
+⚙️ Part 2: Setting up React
+
+Sabse easy setup:
+
+npm create vite@latest my-react-app
+cd my-react-app
+npm install
+npm run dev
+
+
+💡 Part 3: Understanding Components
+
+React me sab kuch component hota hai — ek JavaScript function jo UI return karta hai (HTML-like syntax me).
+Ye syntax JSX kehlata hai (JavaScript XML).

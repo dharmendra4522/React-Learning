@@ -1,0 +1,44 @@
+⭐ PART 1: useMemo
+👉 “Memoized value store karna”
+
+Agar koi heavy calculation har render par run hota hai, to app slow ho jati hai.
+useMemo result ko cache kar deta hai, taaki unnecessary calculation na ho.
+-------------------------------------------------------------------
+⭐ PART 2: useCallback
+👉 “Memoized function store karna”
+useCallback functions ko unnecessarily re-create hone se bachata hai.
+⭐ Problem:
+
+Har render par React sab functions ko re-create karta hai.
+Ye child components ko unnecessary re-render kara sakta hai.
+
+🧠 INTERVIEW QUESTIONS (useCallback)
+Q1: What does useCallback do?
+
+It returns a memoized version of a function.
+
+Q2: When do we need useCallback?
+
+When functions are passed to child components (prevent re-renders).
+
+Q3: Difference between useMemo & useCallback?
+
+useMemo → memoizes value
+
+useCallback → memoizes function
+---------------------------------------------
+⭐ PART 3: React.memo
+👉 “Child component unnecessary re-render se bachao.”
+
+Aapka child component sirf tab re-render hoga jab props change honge.
+
+------------------------------------------------------------------------------------
+
+⭐ PRACTICE TASK: Search Filter App (useMemo)
+
+Goal:
+
+1. 50 items ki list
+2. Search bar
+3. Search operation useMemo ke andar hona chahiye
+4. UI fast chale, even if 50–100 items ho
